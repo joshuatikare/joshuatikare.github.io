@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua Tikare — Youth Motivational Speaker</title>
+    <meta name="description" content="Joshua Tikare - Stanford student, former West End actor, England hockey player. Youth motivational speaker inspiring students ages 8-18.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --black: #0A0A0A;
+            --gray: #666666;
+            --light-gray: #F5F5F5;
+            --border: #E5E5E5;
+            
+            --font-display: 'Lora', serif;
+            --font-sans: 'Space Grotesk', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--black);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--black);
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            font-size: 0.9rem;
+            font-weight: 400;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--black);
+        }
+
+        .nav-cta {
+            padding: 0.7rem 1.5rem;
+            background: var(--black);
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .nav-cta:hover {
+            background: #1a1a1a;
+            color: var(--white);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            width: 100%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .hero-stat {
+            display: flex;
+            align-items: baseline;
+            gap: 0.3rem;
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-sans);
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--black);
+        }
+
+        .hero-stat-label {
+            font-size: 0.75rem;
+            color: var(--gray);
+            font-weight: 400;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        .hero-stat-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 400;
+            line-height: 0.95;
+            margin-bottom: 2rem;
+            color: var(--black);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            font-weight: 400;
+            line-height: 1.7;
+            max-width: 500px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--black);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            gap: 1rem;
+        }
+
+        .hero-cta::after {
+            content: '↓';
+            font-size: 1.2rem;
+        }
+
+        .vertical-text {
+            position: absolute;
+            left: -80px;
+            top: 50%;
+            transform: rotate(-90deg) translateX(50%);
+            transform-origin: left center;
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .hero-photo {
+            position: relative;
+            height: 600px;
+        }
+
+        .hero-photo-container {
+            position: relative;
+            height: 100%;
+            border-radius: 0;
+            overflow: hidden;
+            background: var(--light-gray);
+        }
+
+        .hero-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 0.95rem;
+            font-style: italic;
+            background: var(--light-gray);
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 10rem 0;
+        }
+
+        .section-alt {
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            font-weight: 500;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 3rem;
+            letter-spacing: -0.01em;
+        }
+
+        .section-intro {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 800px;
+            line-height: 1.7;
+            margin-bottom: 5rem;
+        }
+
+        /* ===== GRID LAYOUTS ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        /* ===== STATS CARDS ===== */
+        .stat-card {
+            padding: 3rem 2rem;
+            background: var(--white);
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-value {
+            font-family: var(--font-sans);
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--black);
+            display: block;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        /* ===== CONTENT CARDS ===== */
+        .content-card {
+            padding: 3rem;
+            background: var(--white);
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .content-card:hover {
+            border-color: var(--black);
+        }
+
+        .content-card h3 {
+            font-family: var(--font-sans);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .content-card p {
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .card-number {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 4rem;
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-year {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray);
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-content h3 {
+            font-family: var(--font-sans);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .timeline-content p {
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* ===== QUOTE ===== */
+        .quote-block {
+            padding: 6rem 4rem;
+            background: var(--white);
+            border: 1px solid var(--border);
+            text-align: center;
+            margin: 5rem 0;
+        }
+
+        .quote-text {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--black);
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .quote-attribution {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* ===== FAQ ===== */
+        .faq-item {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            margin-top: 1.5rem;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 0;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            background: transparent;
+            color: var(--black);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-bottom-color: var(--black);
+        }
+
+        .form-group textarea {
+            resize: none;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            padding: 1rem 3rem;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-sans);
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .contact-info p {
+            font-size: 1.05rem;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            font-size: 1.1rem;
+            color: var(--black);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.6;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 5rem 0 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--black);
+        }
+
+        .footer-bottom {
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .hero-grid,
+            .grid-2,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .vertical-text {
+                display: none;
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1.2rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container,
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .section {
+                padding: 5rem 0;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .quote-block {
+                padding: 3rem 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Joshua Tikare</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#talk">The Talk</a>
+                <a href="#speaking">Speaking</a>
+                <a href="#contact" class="nav-cta">Book A Call →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-grid">
+                <div class="hero-content fade-in">
+                    <span class="vertical-text">Youth Speaker</span>
+                    
+                    <div class="hero-stats">
+                        <div class="hero-stat-container">
+                            <div class="hero-stat">
+                                <span class="hero-stat-number">+300</span>
+                            </div>
+                            <span class="hero-stat-label">Auditions completed</span>
+                        </div>
+                        <div class="hero-stat-container">
+                            <div class="hero-stat">
+                                <span class="hero-stat-number">+20</span>
+                            </div>
+                            <span class="hero-stat-label">No's for every yes</span>
+                        </div>
+                    </div>
+
+                    <h1 class="hero-title">Twenty No's<br>for Every Yes</h1>
+                    <p class="hero-subtitle">From London's West End to England's hockey pitch to Silicon Valley—and 1,000 failures in between. I'm Joshua Tikare, and I show students that your relationship with failure determines your capacity for extraordinary achievement.</p>
+                    <a href="#about" class="hero-cta">Scroll down</a>
+                </div>
+                <div class="hero-photo fade-in">
+                    <div class="hero-photo-container">
+                        <div class="hero-photo-placeholder">
+                            Your professional photo here
+                        </div>
+                        <!-- Replace with: <img src="your-photo.jpg" alt="Joshua Tikare"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Matters -->
+    <section class="section">
+        <div class="container">
+            <span class="section-label">The Problem</span>
+            <h2 class="section-title">Why This Talk<br>Matters Now</h2>
+            <p class="section-intro fade-in">42% of Gen Z students report experiencing anxiety or depression. In a world where social media amplifies comparison and fear of failure, young people need to hear a different message.</p>
+            <div class="grid-2 fade-in">
+                <div>
+                    <p style="color: var(--gray); line-height: 1.8;">Students today are paralyzed by perfectionism. They see success stories on Instagram but never see the failures behind them. They're told to "find their passion" and "be the best" without understanding that greatness comes from repeatedly failing and showing up anyway.</p>
+                </div>
+                <div>
+                    <p style="color: var(--gray); line-height: 1.8;"><strong style="color: var(--black);">My talk directly addresses this crisis</strong> by reframing failure not as something to avoid, but as evidence that you're trying enough, taking enough risks, and building the resilience that leads to extraordinary outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section-alt">
+        <div class="container">
+            <span class="section-label">About Joshua</span>
+            <h2 class="section-title">From West End<br>to World Stage</h2>
+            <div class="grid-2 fade-in">
+                <div>
+                    <p style="font-size: 1.15rem; color: var(--black); line-height: 1.7; margin-bottom: 2rem;">I'm not a motivational speaker who talks about resilience from a distance—I'm a Stanford senior still navigating rejection every single day.</p>
+                    <p style="color: var(--gray); line-height: 1.7;">At age 8, I became the youngest performer in my role in Matilda the Musical on London's West End. But what audiences didn't see: the 300+ auditions, the 20 rejections for every callback, the voice nodules that nearly ended my career at age 10.</p>
+                </div>
+                <div>
+                    <p style="color: var(--gray); line-height: 1.7; margin-bottom: 1.5rem;">By my teens, I was competing internationally for England in field hockey—but only after choosing the unconventional path, picking a less popular sport, and fighting for every opportunity.</p>
+                    <p style="color: var(--gray); line-height: 1.7;">Today, as the first student from my school to attend Stanford, I'm studying Economics and Chinese while building a startup, releasing music, and inspiring the next generation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Numbers -->
+    <section class="section">
+        <div class="container">
+            <span class="section-label">Proof Points</span>
+            <h2 class="section-title">By The Numbers</h2>
+            <div class="grid-4 fade-in">
+                <div class="stat-card">
+                    <span class="stat-value">300+</span>
+                    <p class="stat-label">Auditions & Casting Calls</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">20:1</span>
+                    <p class="stat-label">No's For Every Yes</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">8</span>
+                    <p class="stat-label">Years Old,<br>West End Debut</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">1st</span>
+                    <p class="stat-label">From School<br>to Stanford</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Talk -->
+    <section id="talk" class="section section-alt">
+        <div class="container">
+            <span class="section-label">The Talk</span>
+            <h2 class="section-title">Twenty No's<br>for Every Yes</h2>
+            <p class="section-intro fade-in">A powerful narrative journey through rejection, resilience, and the courage to pursue unconventional paths.</p>
+            
+            <div class="grid-3 fade-in">
+                <div class="content-card">
+                    <div class="card-number">Act I</div>
+                    <h3>The Dancing Kid</h3>
+                    <p>Opens with me as a 4-year-old, dancing alone by the speaker. My parents encourage exploration. This sets the foundation: trying many things—and failing at most—was celebrated.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-number">Act II</div>
+                    <h3>The 20:1 Ratio</h3>
+                    <p>Specific, vulnerable stories of rejection. Matilda auditions. Voice nodules. Hockey tryouts. Stanford vs. Oxford. Each failure teaching a lesson.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-number">Act III</div>
+                    <h3>Still In The Arena</h3>
+                    <p>Ends with me today: building a startup, releasing music. I'm not preaching from a mountaintop—I'm still climbing, still failing, still trying.</p>
+                </div>
+            </div>
+
+            <div class="quote-block fade-in">
+                <p class="quote-text">"Successful people don't succeed despite trying many things—they succeed because they try many things."</p>
+                <p class="quote-attribution">Core message from the talk</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Students Learn -->
+    <section class="section">
+        <div class="container">
+            <span class="section-label">Impact</span>
+            <h2 class="section-title">What Students<br>Will Learn</h2>
+            <div class="grid-2 fade-in">
+                <div class="content-card">
+                    <div class="card-number">01</div>
+                    <h3>Reframe Rejection</h3>
+                    <p>Learn to see "no" as evidence of trying, not a reflection of worth. Students understand that successful people experience more rejection because they attempt more opportunities.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-number">02</div>
+                    <h3>Build Failure Resilience</h3>
+                    <p>Develop practical strategies for bouncing back faster. I share the exact mindset shifts that helped me audition for role #301 after 300 rejections.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-number">03</div>
+                    <h3>Choose Your Path</h3>
+                    <p>Gain confidence to pursue unconventional paths over expected ones. Learn how to make decisions based on personal growth rather than external validation.</p>
+                </div>
+                <div class="content-card">
+                    <div class="card-number">04</div>
+                    <h3>Embrace Multiple Passions</h3>
+                    <p>Discover why pursuing diverse interests builds unique advantages. Students learn that being a "jack of all trades" creates unexpected opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey -->
+    <section class="section section-alt">
+        <div class="container">
+            <span class="section-label">The Journey</span>
+            <h2 class="section-title">The Path of<br>Perseverance</h2>
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-year">Age 7–12</div>
+                    <div class="timeline-content">
+                        <h3>West End Actor</h3>
+                        <p>Performed in Matilda the Musical and other productions. Auditioned 300+ times, learned that for every role won, there were 20 auditions that ended in "no."</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Teens</div>
+                    <div class="timeline-content">
+                        <h3>International Athlete</h3>
+                        <p>Competed internationally for England in field hockey. Chose the unconventional path when selecting which sport to pursue at the highest level.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Age 18</div>
+                    <div class="timeline-content">
+                        <h3>The Stanford Decision</h3>
+                        <p>First student from my school to attend Stanford. Chose California over Oxford—my parents' dream—prioritizing personal growth over expected prestige.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Present</div>
+                    <div class="timeline-content">
+                        <h3>The Renaissance</h3>
+                        <p>Stanford senior studying Economics & Chinese. Building a startup. Releasing music. Inspiring youth through speaking. Living proof that the philosophy works.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaking -->
+    <section id="speaking" class="section">
+        <div class="container">
+            <span class="section-label">Formats</span>
+            <h2 class="section-title">Speaking<br>Options</h2>
+            <div class="grid-3 fade-in">
+                <div class="content-card">
+                    <h3>15 minutes</h3>
+                    <div class="card-number">Inspirational Talk</div>
+                    <p>Perfect for assemblies. High-energy, story-driven presentation with key takeaways.</p>
+                </div>
+                <div class="content-card">
+                    <h3>30 minutes</h3>
+                    <div class="card-number">Keynote + Q&A</div>
+                    <p>Full narrative journey with dedicated time for student questions. Most popular format.</p>
+                </div>
+                <div class="content-card">
+                    <h3>45 minutes</h3>
+                    <div class="card-number">Workshop</div>
+                    <p>Deep-dive session with group activities and personal reflection exercises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt">
+        <div class="container">
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">Common<br>Questions</h2>
+            <div class="fade-in" style="max-width: 900px;">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's included in a free engagement?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Full professional experience: customized content, Q&A session, and follow-up resources. The only ask is a testimonial afterward.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How far in advance should we book?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ideally 4-6 weeks for in-person Bay Area events. Virtual presentations can often be arranged with 2-3 weeks' notice.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can the talk be customized?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! I tailor examples based on your audience. For sports teams, I lean into athletic stories. For performing arts programs, more theatre content.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer virtual presentations?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Virtual talks via Zoom/Google Meet are available worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <span class="section-label">Let's Connect</span>
+            <div class="contact-grid fade-in">
+                <div class="contact-info">
+                    <h3>Reserve Your Speaking Date</h3>
+                    <p>Limited free speaking slots available for educational organizations and youth programs. Available for in-person events in the San Francisco Bay Area and virtual presentations worldwide.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-label">Email</div>
+                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-label">LinkedIn</div>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank">Connect on LinkedIn</a>
+                    </div>
+                </div>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="organization" placeholder="Organization/School" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Tell me about your event..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Joshua Tikare</h4>
+                    <p>Youth motivational speaker inspiring students ages 8-18 to embrace failure as the pathway to success.</p>
+                </div>
+                <div>
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#talk">The Talk</a></li>
+                        <li><a href="#speaking">Speaking</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Speaker Sheet</a></li>
+                        <li><a href="mailto:your.email@example.com">Email</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Joshua Tikare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // FAQ
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Form
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            alert('Thank you! Joshua will respond within 24-48 hours.');
+            e.target.reset();
+        });
+
+        // Nav shadow
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 1px 0 rgba(0,0,0,0.05)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
